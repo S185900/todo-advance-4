@@ -89,6 +89,10 @@ header {
     </p>
 </div> */
 
+form.todo__list__table{
+    width: 50%;
+}
+
 p {
     all: unset;
 }
@@ -106,46 +110,49 @@ p {
 
 /* <div class="todo__list__table__wrapper">
     <table class="todo__list__table">
+        @foreach ($todos as $todo)
         <tr>
             <th>
-                <form action="" class="todo__list__update">
-                    <input class="todo__input__form" type="text">
+                <form action="/todos/update" class="todo__list__update" method="POST">
+                    @method('PATCH')
+                    @csrf
+                    <input class="todo__input__form" type="text" name="content" value="{{ $todo['content'] }}">
+                    <input type="hidden" name="id" value="{{ $todo['id'] }}">
                     <button class="todo__update__button" type="submit">
                         更新
                     </button>
                 </form>
             </th>
             <th>
-                <form action="" class="form__list__delete">
+                <form action="/todos/delete" class="form__list__delete" method="POST">
+                    @method('DELETE')
+                    @csrf
+                    <input type="hidden" name="id" value="{{ $todo['id'] }}">
                     <button class="todo__delete__button" type="submit">
                         削除
                     </button>
                 </form>
             </th>
         </tr>
-        <tr>
-            <th>
-                <form action="" class="todo__list__update">
-                    <input class="todo__input__form" type="text">
-                    <button class="todo__update__button" type="submit">
-                        更新
-                    </button>
-                </form>
-            </th>
-            <th>
-                <form action="" class="form__list__delete">
-                    <button class="todo__delete__button" type="submit">
-                        削除
-                    </button>
-                </form>
-            </th>
-        </tr>
+        @endforeach
     </table>
 </div> */
+
+.todo__list__update{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+}
 
 .todo__list__table__wrapper{
     width: 100%;
     padding: 0px 50px 10px 50px;
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 }
 
 table.todo__list__table{
@@ -153,25 +160,47 @@ table.todo__list__table{
 
 }
 
+tbody{
+    
+}
+
+ul {
+    margin: 0;
+    /* デフォルトの外側の余白をリセット */
+    padding: 0;
+    /* デフォルトの内側の余白をリセット */
+    list-style: none;
+    /* 箇条書きの点や番号を消す */
+}
+
+table.todo__list__table{
+    width: 600px;
+}
 
 .todo__list__table{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 400px;
 }
 
 tr, th {
+
     border-top: 1px solid #b9b9b9;
     border-bottom: 1px solid #b9b9b9;
     padding: 10px 5px 10px 10px;
+    margin: 0 auto;
 }
+
+/* th:nth-of-type(1){
+    width: 100px;
+} */
 
 .todo__input__form{
     border: none;
     /* background-color: #505050; */
-    width: 560px; */
-    margin: 0 10px 0 15px;
+    width: 80%;
+    margin: 0 10px 0 0;
     font-size: 16px;
 }
 
@@ -184,6 +213,8 @@ tr, th {
     border: none;
     padding: 5px 12px;
     font-size: 13px;
+    margin-left: 40px;
+    width: 50px;
 }
 
 .todo__delete__button {
@@ -193,6 +224,7 @@ tr, th {
     border: none;
     padding: 5px 12px;
     font-size: 13px;
+    width: 50px;
 }
 
 
@@ -212,3 +244,14 @@ tr, th {
         border-color: #4A993E;
 } */
 
+.todo__alert--success{
+    background-color: rgb(180, 224, 255);
+    font-size: 18px;
+    padding: 0 0 0 40px;
+}
+
+.todo__alert--danger {
+    background-color: rgb(255, 188, 174);
+        font-size: 18px;
+        padding: 0 0 0 40px;
+}

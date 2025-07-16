@@ -6,6 +6,26 @@
 
 
 @section('content')
+
+    <div class="todo__alert-with">
+        @if(session('message'))
+        <div class="todo__alert--success">
+            {{ session('message') }}
+        </div>
+        @endif
+
+    @if ($errors->any())
+    <div class="todo__alert--danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
+    </div>
+
     <div class="content">
         <div class="form__top__wrapper">
             <form class="form__top" action="/todos" method="post">
@@ -27,40 +47,31 @@
         </div>
         <div class="todo__list__table__wrapper">
             <table class="todo__list__table">
+                @foreach ($todos as $todo)
                 <tr>
                     <th>
-                        <form action="" class="todo__list__update">
-                            <input class="todo__input__form" type="text" name="content" value="test">
+                        <form action="/todos/update" class="todo__list__update" method="POST">
+                            @method('PATCH')
+                            @csrf
+                            <input class="todo__input__form" type="text" name="content" value="{{ $todo['content'] }}">
+                            <input type="hidden" name="id" value="{{ $todo['id'] }}">
                             <button class="todo__update__button" type="submit">
                                 更新
                             </button>
                         </form>
                     </th>
                     <th>
-                        <form action="" class="form__list__delete">
+                        <form action="/todos/delete" class="form__list__delete" method="POST">
+                            @method('DELETE')
+                            @csrf
+                            <input type="hidden" name="id" value="{{ $todo['id'] }}">
                             <button class="todo__delete__button" type="submit">
                                 削除
                             </button>
                         </form>
                     </th>
                 </tr>
-                <tr>
-                    <th>
-                        <form action="" class="todo__list__update">
-                            <input class="todo__input__form" type="text" name="content" value="test2">
-                            <button class="todo__update__button" type="submit">
-                                更新
-                            </button>
-                        </form>
-                    </th>
-                    <th>
-                        <form action="" class="form__list__delete">
-                            <button class="todo__delete__button" type="submit">
-                                削除
-                            </button>
-                        </form>
-                    </th>
-                </tr>
+                @endforeach
             </table>
         </div>
     </div>
