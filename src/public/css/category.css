@@ -2,7 +2,7 @@
 
 /* <div class="content"> */
 .content{
-    max-width: 1000px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -21,42 +21,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
-    padding: 10px 0px 0px 30px;
+    gap: 60px;
+    padding: 70px 50px 50px 50px;
     width: 100%;
 }
 
 .form__input {
-    flex: 5;
+    flex: 7;
     /* 全体の70%を占める */
-    max-width: 50%;
-    
-}
-
-.form__category{
-    flex: 2;
-    /* 全体の30%を占める */
-    max-width: 20%;
+    max-width: 70%;
     /* 必要なら最大幅を制限 */
-    padding-right: 40px;
 }
 
 .form__button {
-    flex: 1.5;
+    flex: 2;
     /* 全体の20%を占める */
-    max-width: 15%;
+    max-width: 20%;
     /* 必要なら最大幅を制限 */
 }
 
 .form__input__box {
-    height: 40px;
-    width: 100%;
-    border: 1px solid #a7a7a7;
-    border-radius: 3px;
-    padding: 0 0 0 10px;
-}
-
-.form__category__box{
     height: 40px;
     width: 100%;
     border: 1px solid #a7a7a7;
@@ -88,42 +72,15 @@ p {
     all: unset;
 }
 
-.todo__create__ttl{
-    width: 100%;
-    padding: 50px 50px 5px 80px;
-    margin-left: 15px;
-}
-
-.todo__create__ttl, p {
-    font-weight: bold;
-    font-size: 20px;
-}
-
-
-
-.todo__create__ttl-p{
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.todo__list__ttl-p {
-    font-weight: bold;
-    font-size: 20px;
-}
-
 .todo__list__ttl{
     width: 100%;
-    padding: 20px 50px 5px 80px;
+    padding: 0px 50px 15px 50px;
     margin-left: 15px;
 }
 
 .todo__list__ttl, p {
-    font-weight: normal;
-    font-size: 16px;
-}
-
-.ttl{
-    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 /* <div class="todo__list__table__wrapper">
@@ -158,18 +115,14 @@ p {
 
 .todo__list__update{
     display: flex;
-        justify-content: left;
-        align-items: center;
-        width: 780px;
-}
-
-.form__top__wrapper{
-    
+    justify-content: center;
+    align-items: center;
+    width: 600px;
 }
 
 .todo__list__table__wrapper{
-    width: 100%;
-    padding: 70px 50px 10px 50px;
+width: 100%;
+    padding: 0px 60px 10px 0px;
     /* text-align: center; */
     display: flex;
     justify-content: center;
@@ -177,16 +130,14 @@ p {
     margin: 0 auto;
 }
 
-/* table.todo__list__table{
+table.todo__list__table{
     width: 100%;
 
-} */
-
-tbody{
-
-    text-align: center;
-    padding: 0 0 0 30px;
 }
+
+tbody {
+    text-align: center;
+    padding: 0 0 0 60px;
 
 ul {
     margin: 0;
@@ -198,7 +149,7 @@ ul {
 }
 
 table.todo__list__table{
-    width: 100%;
+    width: 600px;
 }
 
 .todo__list__table{
@@ -210,14 +161,10 @@ table.todo__list__table{
 
 tr, th {
 
-    /* border-top: 1px solid #b9b9b9; */
+    border-top: 1px solid #b9b9b9;
     border-bottom: 1px solid #b9b9b9;
     padding: 10px 5px 10px 10px;
     margin: 0 auto;
-}
-
-.th__delete{
-    padding: 10px 30px 10px 10px;
 }
 
 /* th:nth-of-type(1){
@@ -227,10 +174,9 @@ tr, th {
 .todo__input__form{
     border: none;
     /* background-color: #505050; */
-    width: 40%;
+    width: 80%;
     margin: 0 10px 0 0;
     font-size: 16px;
-    padding: 0 0 0 20px;
 }
 
 
@@ -242,7 +188,7 @@ tr, th {
     border: none;
     padding: 5px 12px;
     font-size: 13px;
-    margin-left: 320px;
+    margin-left: 40px;
     width: 50px;
 }
 
@@ -255,27 +201,9 @@ tr, th {
     font-size: 13px;
     width: 50px;
 }
-.todo__ttl-1{
-    width: 100%;
-    padding: 20px 50px 5px 40px;
-    margin-left: 5px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #333;
-    text-align: left;
 
 
-}
 
-.todo__ttl-2{
-    width: 100%;
-    padding: 20px 50px 5px 170px;
-    margin-left: 5px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #333;
-    text-align: left;
-}
 /* .button{
     display: inline-block;
     border-radius: 3px;

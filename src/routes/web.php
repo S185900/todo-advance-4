@@ -2,11 +2,36 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TodoController;
+use App\Http\Controllers\CategoryController;
 
 Route::get('/', [TodoController::class, 'index']);
 Route::post('/todos', [TodoController::class, 'store']);
-Route::patch('/todos/update', [TodoController::class, 'update']);
-Route::delete('/todos/delete', [TodoController::class, 'destroy']);
+Route::patch('/todos/{todo_id}', [TodoController::class, 'update']);
+Route::delete('/todos/{todo_id}', [TodoController::class, 'destroy']);
+Route::get('/todos/search', [TodoController::class, 'search']);
+
+//エラー回避のためのルーティング
+// Route::get('/todos/{todo_id}', [TodoController::class, 'store']);
+// Route::get('/todos/{todo_id}', [TodoController::class, 'update']);
+// Route::get('/todos/{todo_id}', [TodoController::class, 'destroy']);
+
+
+
+Route::get('/categories', [CategoryController::class, 'index']);
+Route::post('/categories', [CategoryController::class, 'store']);
+// Route::patch('/categories/update', [CategoryController::class, 'update']);
+// Route::patch('/categories/delete', [CategoryController::class, 'destroy']);
+Route::patch('/categories/{category_id}', [CategoryController::class, 'update']);
+Route::delete('/categories/{category_id}', [CategoryController::class, 'destroy']);
+
+
+//エラー回避のためのルーティング
+// Route::get('/categories/{category_id}', [CategoryController::class, 'store']);
+// Route::get('/categories/update', [CategoryController::class, 'update']);
+// Route::get('/categories/{category_id}', [CategoryController::class, 'update']);
+// Route::get('/categories/{category_id}', [CategoryController::class, 'destroy']);
+
+
 
 
 /*

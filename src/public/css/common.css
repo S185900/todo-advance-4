@@ -1,0 +1,52 @@
+/*
+<header>
+    <div class="header__wrapper">
+        <div class="header__logo">
+            <a href="/" class="header__logo__image">Todo</a>
+        </div>
+    </div>
+</header> */
+
+
+header {
+    background-color: #000;
+    height: 70px;
+    max-width: 100%;
+}
+
+.header__wrapper {
+    padding: 15px 0 5px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+.header__logo__image {
+    color: #fff;
+    font-size: 26px;
+    text-decoration: none;
+}
+
+.header__nav{
+    display: flex;
+    align-items: center;
+    padding-right: 60px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.header__nav__list {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.header__nav__item {
+    margin-right: 20px;
+}
+
+.header__nav__item a {
+    color: #fff;
+    text-decoration: none;
+}

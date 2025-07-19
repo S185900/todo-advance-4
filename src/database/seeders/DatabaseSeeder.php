@@ -13,6 +13,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        // Call the TodosTableSeeder to seed the todos table
+        $this->call(TodosTableSeeder::class);
+        $this->call(CategoriesTableSeeder::class);
+
+        // You can add more seeders here if needed
+        // $this->call(AnotherSeeder::class);
     }
 }
