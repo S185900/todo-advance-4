@@ -16,5 +16,5 @@
 
 1. リポジトリをクローンします:
    ```bash
-   git clone https://github.com/username/contact-form-app.git
+   git clone [https://github.com/username/contact-form-app.git](https://github.com/S185900/todo-advance-4.git)
    cd todo-advance-4
